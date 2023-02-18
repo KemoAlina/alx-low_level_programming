@@ -13,7 +13,7 @@ int main(void)
 	x = 0;
 	while (x < 100)
 	{
-		y = x;
+		y = x + 1;
 		while (y < 100)
 		{
 			putchar(x / 10 + 48);
