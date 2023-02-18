@@ -10,26 +10,22 @@ int main(void)
 {
 	int x, y;
 
-	x = 0;
-	while (x < 100)
+	for (x = 0; x <= 98; x++)
 	{
-		y = x + 1;
-		while (y < 100)
+		for (y = x + 1; y <= 99; y++)
 		{
-			putchar(x / 10 + 48);
-			putchar(x % 10 + 48);
+			putchar((x / 10) + '0');
+			putchar((x % 10) + '0');
 			putchar(' ');
-			putchar(y / 10 + 48);
-			putchar(y % 10 + 48);
+			putchar((y / 10) + '0');
+			putchar((y % 10) + '0');
 
-			if (x != 99 || y != 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
-		y++;
+			if (x == 98 && y == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-	x++;
 	}
 	putchar('\n');
 	return (0);
