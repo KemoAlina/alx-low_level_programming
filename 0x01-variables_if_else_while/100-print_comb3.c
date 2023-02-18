@@ -8,24 +8,27 @@
 
 int main(void)
 {
-	int nums;
+	int x;
+	int y;
 
-	nums = 1;
-	while (nums <= 89)
+	x = 0;
+	while (x <= 8)
 	{
-		putchar(nums / 10 + 48);
-		putchar(nums % 10 + 48);
+		y = x + 1;
+		while (y <= 9)
+		{
+			putchar(48 + x);
+			putchar(48 + y);
 
-		if (nums != 89)
-		{
-			putchar(',');
-			putchar(' ');
+			if (x != 8 || y != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		y++;
 		}
-		else
-		{
-			putchar('\n');
-		}
-		nums++;
+	x++;
 	}
+	putchar('\n');
 	return (0);
 }
