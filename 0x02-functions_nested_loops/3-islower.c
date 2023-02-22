@@ -1,12 +1,16 @@
 #include "main.h"
 
 /**
- * _islower - Protoype function
+ * _islower - Protype function
+ *
+ * @c: c character
+ *
+ * Return: 1 if lowercase or 0 if not
 */
 
 int _islower(int c)
 {
-	if ((c >= 'a' && c <= 'z'))
+	if (c >= 'a' && c <= 'z')
 	{
 		return (1);
 	}
