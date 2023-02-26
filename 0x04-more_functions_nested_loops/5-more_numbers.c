@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * most_numbers - Entry Point
+ * more_numbers - Entry Point
  */
 
 void more_numbers(void)
