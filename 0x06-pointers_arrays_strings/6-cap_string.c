@@ -1,33 +1,39 @@
 #include "main.h"
+
 /**
- *cap_string - capitalizes every first letter of a word in a string.
- *separators of words are:  space, tabulation,
- * new line, ,, ;, ., !, ?, ", (, ), {, and }.
- *@s: pointer to string.
+ * cap_string - capitalises all the words in a string.
+ * @s: pointer to the string
  *
- *Return: pointer to s.
+ * Return: pointer s
  */
+
 char *cap_string(char *s)
 {
-	int count;
+	int i = 0;
+	int j;
+	char separators[13] = {' ', '\t', '\n', ',', ';', '.','!', '?', '"', '(', ')', '{', '}'};
 
-/*  scan through string */
-	count = 0;
-	while (s[count] != '\0')
+	/* check first letter  of the string separately */
+	if ((s[i] >= 97) && (s[i] <= 122))
 	{
-		/* if next character after count is a char , capitalise it */
-		if (s[0] >= 97 && s[0] <= 122)
+		s[i] = s[i] - 32;
+	}
+
+	/* loop through s */
+	for (i = 1; s[i] != '\0'; i++)
+	{
+		/* loop through leet characters */
+		for (j = 0; j < 13; j++)
 		{
-			s[0] = s[0] - 32;
-		}
-		if (s[count] == ' ' || s[count] == '\t' || s[count] == '\n' || s[count] == ',' || s[count] == ';' || s[count] == '.' || s[count] == '.' || s[count] == '!' || s[count] == '?' || s[count] == '"' || s[count] == '(' || s[count] == ')' || s[count] == '{' || s[count] == '}')
-		{
-			if (s[count + 1] >= 97 && s[count + 1] <= 122)
+			/* check if s char == separators char */
+			if (s[i] == separators[j])
 			{
-				s[count + 1] = s[count + 1] - 32;
+				if ((s[i + 1] >= 97) && (s[i + 1] <= 122))
+				{
+					s[i + 1] = s[i + 1] - 32;
+				}
 			}
 		}
-		count++;
 	}
 	return (s);
 }
