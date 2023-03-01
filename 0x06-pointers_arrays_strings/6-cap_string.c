@@ -1,39 +1,31 @@
 #include "main.h"
 
 /**
- * cap_string - capitalises all the words in a string.
- * @s: pointer to the string
- *
- * Return: pointer s
+ * cap_string - capitalizes all words in a string
+ * @s: string
+ * Return: address of s
  */
-
 char *cap_string(char *s)
 {
-	int i = 0;
-	int j;
-	char separators[13] = {' ', '\t', '\n', ',', ';', '.','!', '?', '"', '(', ')', '{', '}'};
+	int i = 0, j;
+	char a[] = " \t\n,;.!?\"(){}";
 
-	/* check first letter  of the string separately */
-	if ((s[i] >= 97) && (s[i] <= 122))
+	while (*(s + i))
 	{
-		s[i] = s[i] - 32;
-	}
-
-	/* loop through s */
-	for (i = 1; s[i] != '\0'; i++)
-	{
-		/* loop through leet characters */
-		for (j = 0; j < 13; j++)
+		if (*(s + i) >= 'a' && *(s + i) <= 'z')
 		{
-			/* check if s char == separators char */
-			if (s[i] == separators[j])
+			if (i == 0)
+				*(s + i) -= 'a' - 'A';
+			else
 			{
-				if ((s[i + 1] >= 97) && (s[i + 1] <= 122))
+				for (j = 0; j <= 12; j++)
 				{
-					s[i + 1] = s[i + 1] - 32;
+					if (a[j] == *(s + i - 1))
+						*(s + i) -= 'a' - 'A';
 				}
 			}
 		}
+		i++;
 	}
 	return (s);
 }
