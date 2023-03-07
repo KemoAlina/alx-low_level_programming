@@ -20,12 +20,10 @@ void print_chessboard(char (*a)[8])
 			if (c == ' ')
 			{
 				_putchar(' ');
-				_putchar(' ');
 			}
 			else
 			{
 				_putchar(c);
-				_putchar(' ');
 			}
 		}
 		_putchar('\n');
